@@ -46,7 +46,7 @@ export default function ChatBox() {
 
     setAiLoading(true);
     try {
-      const model = genAi.getGenerativeModel({ model: "gemini-pro" });
+      const model = genAi.getGenerativeModel({ model: "gemini-2.5-pro-preview-03-25" });
 
       let prompt = "";
       if (userInput.includes("error") || userInput.toLowerCase().includes("exception")) {
@@ -124,7 +124,6 @@ export default function ChatBox() {
   return (
     <>
       <ChatHeader />
-
       <div className="flex flex-col bg-gradient-to-r from-purple-600 via-fuchsia-500 to-green-400/80 rounded-bl-lg rounded-br-lg px-4 py-2 pb-4">
         <div className="flex h-full flex-col max-h-[75vh] overflow-y-auto bg-primary-400  rounded-lg mb-2">
           {getMessageProcessing && (
@@ -133,7 +132,6 @@ export default function ChatBox() {
               <span className="mr-2 text-white">Loading Messages</span>
             </div>
           )}
-
           <ScrollableFeed>
             {Array.isArray(getMessageData) && getMessageData.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full">
@@ -151,7 +149,6 @@ export default function ChatBox() {
             </div>
           )}
         </div>
-
         <div className="relative mt-2">
           <input
             disabled={sendMessageProcessing}
@@ -192,7 +189,6 @@ export default function ChatBox() {
           </button>
         </div>
       </div>
-
       <ToastContainer />
     </>
   );

@@ -36,16 +36,14 @@ export default function Notification() {
         </span>
       </button>
       {isPopupOpen && (
-        <div ref={popupRef} className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl max-h-[50vh] p-2 overflow-y-auto">
-          {notficationsMessages.length === 0 && <p>No Notifications.</p>}
+        <div ref={popupRef} className="absolute right-0 mt-2 py-2 w-48 rounded-md shadow-xl max-h-[50vh] p-2 overflow-y-auto bg-gradient-to-r from-purple-600 via-fuchsia-500 to-green-400/80 text-white">
+          {notficationsMessages.length === 0 && <p className="text-sm text-white text-center">No Notifications.</p>}
 
           {notficationsMessages?.map((item) => (
-            <div
-              key={item._id} // sebaiknya selalu beri `key` saat pakai `.map()`
-              className="shadow-2xl mb-3 m-2 border-r border-b border-l border-gray-400 rounded-lg p-2"
-            >
-              <span className="text-sm font-bold">{item.sender.name}</span> <span className="text-xs"> - {new Date(item.createdAt).toLocaleTimeString()}</span>
-              <h4 className="text-xs font-medium text-gray-900 truncate">{item.message}</h4>
+            <div key={item._id} className="bg-white/20 backdrop-blur-md mb-3 m-2 border border-white/30 rounded-lg p-2">
+              <span className="text-sm font-bold text-white">{item.sender.name}</span>
+              <span className="text-xs text-white/70"> - {new Date(item.createdAt).toLocaleTimeString()}</span>
+              <h4 className="text-xs font-medium text-white truncate">{item.message}</h4>
             </div>
           ))}
         </div>

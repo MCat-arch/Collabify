@@ -52,8 +52,8 @@ const Home = () => {
 
   return (
     <div className="flex flex-wrap justify-between h-screen max-h-full">
-      <div className="w-full h-full lg:w-1/4 bg-white hidden lg:block">{isLoading ? <p className="text-white p-4">Loading chats...</p> : <AllChats />}</div>
-      <div className="w-full h-full lg:w-3/4 bg-white p-4">{isLoading ? <p className="text-white p-4">Loading chatbox...</p> : <ChatBox />}</div>
+      <div className="w-full h-full lg:w-1/4 bg-primary-350 hidden lg:block">{isLoading ? <p className="text-white p-4">Loading chats...</p> : <AllChats />}</div>
+      <div className="w-full h-full lg:w-3/4 bg-primary-350 p-4">{isLoading ? <p className="text-white p-4">Loading chatbox...</p> : <ChatBox />}</div>
     </div>
   );
 };
